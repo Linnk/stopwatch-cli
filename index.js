@@ -5,14 +5,14 @@ const program = require('commander')
 const readline = require('readline')
 const Table = require('cli-table');
 
-const TMP_FOLDER = require('path').dirname(__filename) + '/tmp/'
-const STATE_FILE = TMP_FOLDER + 'states.json'
-const DEFAULT_FILE = TMP_FOLDER + 'default.csv'
-const DEFAULT_FILE_TMP = TMP_FOLDER + 'default.csv.tmp'
+const HOME_FOLDER = process.env.HOME + '/.stopwatch-tracker/'
+const STATE_FILE = HOME_FOLDER + 'states.json'
+const DEFAULT_FILE = HOME_FOLDER + 'default.csv'
+const DEFAULT_FILE_TMP = HOME_FOLDER + 'default.csv.tmp'
 
-if (!fs.existsSync(TMP_FOLDER))
+if (!fs.existsSync(HOME_FOLDER))
 {
-	fs.mkdirSync(TMP_FOLDER)
+	fs.mkdirSync(HOME_FOLDER)
 	fs.appendFileSync(STATE_FILE, JSON.stringify({auto_increment: 1}))
 	fs.appendFileSync(DEFAULT_FILE, 'Name,Start,End,Duration\n')
 }
