@@ -20,9 +20,8 @@ if (!fs.existsSync(HOME_FOLDER))
 const STATE = JSON.parse(fs.readFileSync(STATE_FILE))
 
 program
-	.command('stopwatch [env]')
+	.version('0.1.3')
 	.description('Use stopwatch to track and save events.')
-	.version('1.0.0')
 	.usage('[options] [key_name]')
 	.option('-f, --file', 'Add the path to destination file. If not, stopwatch-cli will save the results on private.')
 	.option('-g, --go', 'Go!')
@@ -31,8 +30,8 @@ program
 	.parse(process.argv)
 
 const reader = readline.createInterface({input: fs.createReadStream(DEFAULT_FILE)})
-const writer = fs.createWriteStream(DEFAULT_FILE_TMP)
-var key_name = program.args[0] ? program.args[0] : (STATE.auto_increment + '')
+
+var key_name = program.args && program.args[0] ? program.args[0] : (STATE.auto_increment + '')
 
 var started = false
 var line_selected = null
@@ -57,8 +56,6 @@ reader.on('line', (line) => {
 	}
 	else if (program.stop)
 	{
-		const writer = fs.createWriteStream(DEFAULT_FILE_TMP)
-
 		if (started !== false)
 		{
 			fs.unlinkSync(STATE_FILE)
@@ -74,6 +71,7 @@ reader.on('line', (line) => {
 		}
 	}
 
+	const writer = fs.createWriteStream(DEFAULT_FILE_TMP)
 	const table = new Table({
 		head: ['Name', 'Start', 'End', 'Duration']
 	})

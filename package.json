@@ -1,6 +1,6 @@
 {
   "name": "stopwatch-tracker",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Stopwatch to track anything.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "cli"
   ],
   "bin": {
-    "stopwatch": "./index.js"
+    "stopwatch": "./stopwatch.js"
   },
   "repository": "github:linnk/stopwatch-cli",
   "author": "Linnk",
