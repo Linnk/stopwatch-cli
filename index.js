@@ -20,6 +20,8 @@ if (!fs.existsSync(TMP_FOLDER))
 const STATE = JSON.parse(fs.readFileSync(STATE_FILE))
 
 program
+	.command('stopwatch [env]')
+	.description('Use stopwatch to track and save events.')
 	.version('1.0.0')
 	.usage('[options] [key_name]')
 	.option('-f, --file', 'Add the path to destination file. If not, stopwatch-cli will save the results on private.')
