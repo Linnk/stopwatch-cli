@@ -20,7 +20,7 @@ if (!fs.existsSync(HOME_FOLDER))
 const STATE = JSON.parse(fs.readFileSync(STATE_FILE))
 
 program
-	.version('0.1.3')
+	.version('0.1.4')
 	.description('Use stopwatch to track and save events.')
 	.usage('[options] [key_name]')
 	.option('-f, --file', 'Add the path to destination file. If not, stopwatch-cli will save the results on private.')
