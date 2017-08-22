@@ -50,11 +50,7 @@ reader.on('line', (line) => {
 
 		console.log('Go!');
 	}
-	else if (program.go)
-	{
-		console.log('Already started ' + started.toFixed(3) + ' seconds ago.')
-	}
-	else if (program.stop)
+	if (program.stop)
 	{
 		if (started !== false)
 		{
