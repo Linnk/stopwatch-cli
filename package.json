@@ -1,6 +1,6 @@
 {
   "name": "stopwatch",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Stopwatch to track anything.",
   "main": "index.js",
   "scripts": {
