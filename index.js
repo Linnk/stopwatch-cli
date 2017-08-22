@@ -90,7 +90,6 @@ reader.on('line', (line) => {
 				}
 				writer.write(`${line}\n`)
 			}
-
 			if (program.dump && line_number > 0)
 			{
 				table.push(line.split(','))

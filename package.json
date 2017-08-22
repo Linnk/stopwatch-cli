@@ -10,6 +10,10 @@
     "stopwatch",
     "cli"
   ],
+  "bin": {
+    "stopwatch": "./index.js"
+  },
+  "repository": "github:linnk/stopwatch-cli",
   "author": "Linnk",
   "license": "MIT",
   "dependencies": {
